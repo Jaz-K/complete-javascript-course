@@ -54,3 +54,16 @@ year = 2025;
 console.log(typeof year);
 
 console.log(typeof null);
+
+// Datatypes Assignment
+
+let country = "Germany";
+let population = 84;
+
+let isIsland = false;
+let language;
+
+console.log(typeof isIsland);
+console.log(typeof population);
+console.log(typeof country);
+console.log(typeof language);
