@@ -22,3 +22,14 @@ let job1 = "Painter";
 let job2 = "Programmer";
 
 console.log(myFirstJob);
+
+// Variables and Values Assignment
+let country = "Germany";
+let continent = "Europe";
+let population = 84;
+
+console.log(country);
+console.log(continent);
+console.log(population);
+
+
