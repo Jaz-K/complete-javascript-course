@@ -1,4 +1,4 @@
-let js = "amazing";
+/* let js = "amazing";
 // if (js === "amazing") alert("Javascript is fun");
 console.log(40 + 8 + 23 - 10);
 
@@ -31,5 +31,26 @@ let population = 84;
 console.log(country);
 console.log(continent);
 console.log(population);
+ */
 
+// Data Types
 
+let javascriotIsFun = true;
+console.log(javascriotIsFun);
+
+console.log(typeof true);
+console.log(typeof javascriotIsFun);
+console.log(typeof 23);
+console.log(typeof "this is cool");
+console.log(typeof {});
+console.log(typeof function(){});
+
+javascriotIsFun = "YES!"
+
+let year;
+console.log(typeof year);
+
+year = 2025;
+console.log(typeof year);
+
+console.log(typeof null);
