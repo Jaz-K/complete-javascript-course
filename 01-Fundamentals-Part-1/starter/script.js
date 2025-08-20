@@ -95,7 +95,7 @@ const isFullAge = ageRoelant >= 18;
 console.log(currentYear - 1991 > currentYear  - 2018); */
 
 // Operator Precedence
-const currentYear = 2037;
+/* const currentYear = 2037;
 const ageJaz = currentYear - 1991;
 const ageRoelant = currentYear - 2018;
 
@@ -111,5 +111,28 @@ x = y = 25 - 10 - 5; // x = y = 10, x = 10
 
 console.log(x, y);
 const averageAge = (ageJaz + ageRoelant) / 2; //grouping (...) highest precedence
-console.log(ageJaz, ageRoelant, averageAge);
+console.log(ageJaz, ageRoelant, averageAge); */
+
+//  Template literals
+
+const firstName = "Jaz";
+const job = "programmer";
+const birthYear = 1985;
+const year = 2037;
+
+const jaz  = "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job +"!" 
+console.log(jaz);
+
+const jazNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(jazNew);
+
+console.log(`This is some text....`);
+
+console.log("String with \n\
+multiple\n\
+lines");
+
+console.log(`String
+with multiple
+lines.`);
 
