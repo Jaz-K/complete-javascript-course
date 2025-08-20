@@ -35,7 +35,7 @@ console.log(population);
 
 // Data Types
 
-let javascriotIsFun = true;
+/* let javascriotIsFun = true;
 console.log(javascriotIsFun);
 
 console.log(typeof true);
@@ -66,4 +66,19 @@ let language;
 console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
-console.log(typeof language);
+console.log(typeof language); */
+
+// Variables
+let age = 30;
+age = 31; // reassign or mutate a variable
+
+const birthYear = 1985;
+//birthYear = 1986; // not mutable throws an error: Assignment to constant variable.
+
+const job; // can't be empty
+
+var job = "programmer"; // legacy 
+job = "content creater";
+
+catsName = "Coco" //Don't do this always declare a variable
+console.log(catsName);
