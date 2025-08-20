@@ -22,16 +22,7 @@ let job1 = "Painter";
 let job2 = "Programmer";
 
 console.log(myFirstJob);
-
-// Variables and Values Assignment
-let country = "Germany";
-let continent = "Europe";
-let population = 84;
-
-console.log(country);
-console.log(continent);
-console.log(population);
- */
+*/
 
 // Data Types
 
@@ -54,22 +45,10 @@ year = 2025;
 console.log(typeof year);
 
 console.log(typeof null);
-
-// Datatypes Assignment
-
-let country = "Germany";
-let population = 84;
-
-let isIsland = false;
-let language;
-
-console.log(typeof isIsland);
-console.log(typeof population);
-console.log(typeof country);
-console.log(typeof language); */
+*/
 
 // Variables
-let age = 30;
+/* let age = 30;
 age = 31; // reassign or mutate a variable
 
 const birthYear = 1985;
@@ -81,4 +60,6 @@ var job = "programmer"; // legacy
 job = "content creater";
 
 catsName = "Coco" //Don't do this always declare a variable
-console.log(catsName);
+console.log(catsName); */
+
+
