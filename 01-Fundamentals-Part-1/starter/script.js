@@ -115,7 +115,7 @@ console.log(ageJaz, ageRoelant, averageAge); */
 
 //  Template literals
 
-const firstName = "Jaz";
+/* const firstName = "Jaz";
 const job = "programmer";
 const birthYear = 1985;
 const year = 2037;
@@ -134,5 +134,26 @@ lines");
 
 console.log(`String
 with multiple
-lines.`);
+lines.`); */
 
+// if else control structure
+
+const age = 15;
+
+if (age >= 18) {
+    console.log(`Rocky can start the driving license 🚗`);
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Rocky is too you. Wait another ${yearsLeft} years 😀!`)
+};
+
+const birthYear = 1985;
+let century;
+
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+};
+
+console.log(century);
