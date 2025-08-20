@@ -64,7 +64,7 @@ console.log(catsName); */
 
 // Basic Operators
 // Math Operators
-const currentYear = 2037
+/* const currentYear = 2037
 const ageJaz = currentYear - 1991;
 const ageRoelant = currentYear - 2018;
 
@@ -78,7 +78,7 @@ const lastName = "K."
 console.log(firstName + " " + lastName);
 //Concatinating strings
 
-//Assignmenr  Operators
+//Assignment  Operators
 let x = 10 + 5;
 x += 10; // x = x + 10 = 25
 x *= 4; // x = x * 4 = 100
@@ -92,5 +92,24 @@ console.log(ageRoelant >= 18); // greater or equal
 
 const isFullAge = ageRoelant >= 18;
 
-console.log(currentYear - 1991 > currentYear  - 2018);
+console.log(currentYear - 1991 > currentYear  - 2018); */
+
+// Operator Precedence
+const currentYear = 2037;
+const ageJaz = currentYear - 1991;
+const ageRoelant = currentYear - 2018;
+
+console.log(currentYear - 1991 > currentYear - 2018);
+// minus precedence 14 & greater than precedence 12 by mdn
+// math operators executes before comparison operators
+
+console.log(25 - 10 - 5); // = 10, left to right execution
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10 
+// first math operation right to left, than assignment operation right to left 
+
+console.log(x, y);
+const averageAge = (ageJaz + ageRoelant) / 2; //grouping (...) highest precedence
+console.log(ageJaz, ageRoelant, averageAge);
 
