@@ -1,4 +1,4 @@
-const country = "Germany";
+/* const country = "Germany";
 const continent = "Europe";
 let population = 84;
 
@@ -36,3 +36,10 @@ if (population >= 33) {
     console.log(
         `${country}'s population is ${33 - population} million below average`);
 };
+ */
+console.log('9' - '5'); // -> "95"
+console.log('19' - '13' + '17'); // -> "617"
+console.log('19' - '13' + 17); // -> 23
+console.log('123' < 57); // -> false
+console.log(5 + 6 + '4' + 9 - 4 - 2); // -> 1143
+// 5  + 6 = 11 + '4' = '114' + 9 = '1149' - 4 - 2 = 1143

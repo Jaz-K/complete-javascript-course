@@ -138,7 +138,7 @@ lines.`); */
 
 // if else control structure
 
-const age = 15;
+/* const age = 15;
 
 if (age >= 18) {
     console.log(`Rocky can start the driving license 🚗`);
@@ -156,4 +156,26 @@ if (birthYear <= 2000) {
     century = 21;
 };
 
-console.log(century);
+console.log(century); */
+
+// Type conversion
+
+const inputYear = "1985";
+console.log(Number(inputYear)); // Number function changing string to number
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jaz')); // NaN (invalid number)
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+// Type coercion
+
+console.log("I am " + 40 + " years old.");
+console.log("23" - "10" - 3);
+console.log("23" + "10" + 3);
+console.log("23" * "2");
+
+let n = "1" + 1; // "11"
+n = n - 1; // "11" - 1 = 10
+console.log(n);
