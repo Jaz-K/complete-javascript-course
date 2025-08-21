@@ -37,9 +37,21 @@ if (population >= 33) {
         `${country}'s population is ${33 - population} million below average`);
 };
  */
-console.log('9' - '5'); // -> "95"
+/* console.log('9' - '5'); // -> "95"
 console.log('19' - '13' + '17'); // -> "617"
 console.log('19' - '13' + 17); // -> 23
 console.log('123' < 57); // -> false
 console.log(5 + 6 + '4' + 9 - 4 - 2); // -> 1143
 // 5  + 6 = 11 + '4' = '114' + 9 = '1149' - 4 - 2 = 1143
+ */
+
+const numNeighbours = Number(prompt('How many neighbour countries does your contry have?'));
+
+if (numNeighbours === 1) {
+    console.log("Only 1 border");
+} else if (numNeighbours > 1) {
+    console.log("More than one border");
+    
+} else {
+    console.log("No borders");
+}
