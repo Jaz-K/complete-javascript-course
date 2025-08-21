@@ -160,7 +160,7 @@ console.log(century); */
 
 // Type conversion
 
-const inputYear = "1985";
+/* const inputYear = "1985";
 console.log(Number(inputYear)); // Number function changing string to number
 console.log(Number(inputYear) + 18);
 
@@ -178,4 +178,27 @@ console.log("23" * "2");
 
 let n = "1" + 1; // "11"
 n = n - 1; // "11" - 1 = 10
-console.log(n);
+console.log(n); */
+
+//Truthy and Falsy
+// 5 falsy values: 0, "", undefined, null. NaN
+
+console.log(Boolean(0));
+console.log(Boolean("test"));
+console.log(Boolean(undefined));
+console.log(Boolean({}));
+
+const money = 100;
+
+if (money) {
+    console.log("Don't spend it all");
+} else {
+    console.log("You should get a job!"); 
+}
+
+let height = 0;
+if (height || height === 0) {
+    console.log("height is defined");
+} else {
+    console.log("Hight is UNDEFINED!");
+}
