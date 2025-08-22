@@ -229,3 +229,27 @@ if (favorite === 23) {
 //Different Operator
 
 if (favorite !== 23) console.log("Why not 23?"); */
+
+//  Logical operators
+
+const hasDiversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDiversLicense && hasGoodVision);
+console.log(hasDiversLicense || hasGoodVision);
+console.log(!hasDiversLicense);
+
+/* if (shouldDrive = hasDiversLicense && hasGoodVision) {
+    console.log("Sahra is able to drive!");
+} else {
+    console.log("someone else should drive...");
+} */
+
+const isTired = false // C
+console.log(hasDiversLicense && hasGoodVision && isTired);
+
+if ((shouldDrive = hasDiversLicense && hasGoodVision && !isTired)) {
+    console.log("Sahra is able to drive!");
+} else {
+    console.log("someone else should drive...");
+}

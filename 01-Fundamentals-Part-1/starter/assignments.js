@@ -1,18 +1,18 @@
-/* const country = "Germany";
+const country = "Germany";
 const continent = "Europe";
 let population = 84;
 
-console.log(country);
-console.log(continent);
-console.log(population);
+// console.log(country);
+// console.log(continent);
+// console.log(population);
 
 const isIsland = false;
 let language;
 
-console.log(typeof isIsland);
-console.log(typeof population);
-console.log(typeof country);
-console.log(typeof language);
+// console.log(typeof isIsland);
+// console.log(typeof population);
+// console.log(typeof country);
+// console.log(typeof language);
 
 language = "german"
 // isIsland = "true" 
@@ -21,22 +21,22 @@ language = "german"
 console.log("population", population / 2);
 population++
 
-console.log(population > 6);
-console.log(population < 33);
+// console.log(population > 6);
+// console.log(population < 33);
 
-const description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
-console.log(description);
+// const description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
+// console.log(description);
 
-const descriptionNew = `${country} is in ${continent}, and it's ${population} million people speak ${language}`;
-console.log(descriptionNew);
+// const descriptionNew = `${country} is in ${continent}, and it's ${population} million people speak ${language}`;
+// console.log(descriptionNew);
 
-if (population >= 33) {
-   console.log(`${country}'s population is above average`);
-} else {
-    console.log(
-        `${country}'s population is ${33 - population} million below average`);
-};
- */
+// if (population >= 33) {
+//    console.log(`${country}'s population is above average`);
+// } else {
+//     console.log(
+//         `${country}'s population is ${33 - population} million below average`);
+// };
+
 /* console.log('9' - '5'); // -> "95"
 console.log('19' - '13' + '17'); // -> "617"
 console.log('19' - '13' + 17); // -> 23
@@ -45,7 +45,7 @@ console.log(5 + 6 + '4' + 9 - 4 - 2); // -> 1143
 // 5  + 6 = 11 + '4' = '114' + 9 = '1149' - 4 - 2 = 1143
  */
 
-const numNeighbours = Number(prompt('How many neighbour countries does your contry have?'));
+/* const numNeighbours = Number(prompt('How many neighbour countries does your contry have?'));
 
 if (numNeighbours === 1) {
     console.log("Only 1 border");
@@ -54,4 +54,10 @@ if (numNeighbours === 1) {
     
 } else {
     console.log("No borders");
+} */
+
+if (language === "english" && population < 50 && !isIsland) {
+    console.log(`YOu should live in ${country}`);
+} else {
+    console.log(`${country} does not meet your criteria:(`);
 }
