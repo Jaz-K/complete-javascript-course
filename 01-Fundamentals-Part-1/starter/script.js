@@ -298,7 +298,7 @@ if (day ===  'monday') {
 
 // STATEMENT AND EXPRESSIONS
 
-3 + 4 //expression
+/* 3 + 4 //expression
 1991 //expression
 true && false && !false //expression
 
@@ -308,3 +308,24 @@ if (23 > 10) { //statement
 
 const me  = "Jaz"
 console.log(`I'm ${2037 - 1991} years old ${me}.`); //${} is an expression
+ */
+
+// CONDITIONAL (TERNARY) OPERATOR
+
+const age = 23;
+// age >= 18 // condition
+//     ? console.log("I like to drink wine 🍷")  // if part
+//     : console.log("I like to drink juice 🥤"); // else part
+
+const drink = age >= 18 ? "wine 🍷" : "juice🥤";  
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    (drink2 = "wine 🍷");
+} else {
+    (drink2 = "juice🥤");
+}
+console.log(drink2);
+
+console.log(`I like to drink${age >= 18 ? "wine 🍷" : "juice🥤"}`);
