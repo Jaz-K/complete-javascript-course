@@ -256,7 +256,7 @@ if (favorite !== 23) console.log("Why not 23?"); */
 
 // SWITCH STATEMENT
 
-const day = "thursday";
+/* const day = "thursday";
 
 switch (day) {
     case "monday": //day === 'monday'
@@ -294,4 +294,17 @@ if (day ===  'monday') {
     console.log("Enjoy the weekend");
 } else {
     console.log("Not a valid day!");
+} */
+
+// STATEMENT AND EXPRESSIONS
+
+3 + 4 //expression
+1991 //expression
+true && false && !false //expression
+
+if (23 > 10) { //statement
+    const str = '23 is bigger than ten';
 }
+
+const me  = "Jaz"
+console.log(`I'm ${2037 - 1991} years old ${me}.`); //${} is an expression
