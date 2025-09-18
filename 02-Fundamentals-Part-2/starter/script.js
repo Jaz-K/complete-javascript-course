@@ -108,7 +108,7 @@ console.log(yearUntilRetirement(1985, "Coco"));
 console.log(yearUntilRetirement(1970, "Mike")); */
 
 // ARRAYS
-
+/* 
 const friend1 = "Coco";
 const friend2 = "Rocky";
 const friend3 = "Elliot";
@@ -156,4 +156,34 @@ const age3 = calcAge(years[years.length-1]);
 console.log(age1, age2,age3)
 
 const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length-1])];
-console.log(ages);
+console.log(ages); */
+
+// ARRAY OPERATIONS (Methods)
+
+// add elements
+const friends = ["Coco", "Rocky", "Elliot"];
+
+const newLength  = friends.push("Zaya")
+console.log(friends);
+console.log(newLength);
+
+friends.unshift("Marc")
+console.log(friends);
+
+//remove elements
+
+const popped = friends.pop() // last
+console.log(friends);
+console.log(popped);
+
+friends.shift() // first
+console.log(friends);
+
+console.log(friends.indexOf("Coco")); //index of element in array
+
+console.log(friends.includes("Coco"))
+console.log(friends.includes("Bob"))
+
+if (friends.includes("Coco")) {
+    console.log(`You have a friends called Coco.`)
+}
