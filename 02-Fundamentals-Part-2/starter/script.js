@@ -15,7 +15,7 @@ if (hasDriversLicense) console.log("I can drive :D");
 
 //FUNCTION
 
-function logger() {
+/* function logger() {
     console.log('Hello my name is Jaz');
 }
 
@@ -33,4 +33,21 @@ const applejuice = fruitProcessor(5, 0);
 console.log(applejuice);
 
 const appleOrangeJuice = fruitProcessor(2, 6);
-console.log(appleOrangeJuice);
+console.log(appleOrangeJuice); */
+
+//function decleration
+/* function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+const age = calcAge1(1985)
+console.log(age);
+
+//function expression
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const age2 = calcAge2(1985)
+console.log(age2);
+ */
