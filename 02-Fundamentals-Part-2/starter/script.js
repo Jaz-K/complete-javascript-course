@@ -67,3 +67,18 @@ const yearUntilRetirement = (birthYear, firstName) => {
 console.log(yearUntilRetirement(1985, "Coco"));
 console.log(yearUntilRetirement(1980, "Bob"));
  */
+
+//FUNCTIONS CALLING FUNCTIONS
+
+function cutFruitPieces(fruit) {
+    return fruit * 4
+}
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples)
+    const orangePieces = cutFruitPieces(oranges)
+    const juice = `juice with ${applePieces} piece of apples and ${orangePieces} pieces of oranges.`;
+    return juice;
+}
+
+console.log(fruitProcessor(2, 3));
