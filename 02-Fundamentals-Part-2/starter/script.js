@@ -161,7 +161,7 @@ console.log(ages); */
 // ARRAY OPERATIONS (Methods)
 
 // add elements
-const friends = ["Coco", "Rocky", "Elliot"];
+/* const friends = ["Coco", "Rocky", "Elliot"];
 
 const newLength  = friends.push("Zaya")
 console.log(friends);
@@ -187,3 +187,82 @@ console.log(friends.includes("Bob"))
 if (friends.includes("Coco")) {
     console.log(`You have a friends called Coco.`)
 }
+
+const bill = 100;
+
+const calcTip = (bill) => {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+ */
+// function calcTip(bill) {
+//     if (bill >= 50 && bill <= 300){
+//         const tip = bill * 0.15;
+//         return tip;
+//     } else {
+//         const tip = bill * 0.2;
+//         return tip
+//     }
+// } 
+
+// OBJECTS
+
+/* // Array example
+const jazArray = [
+    'Jaz',
+    'K.',
+    2037 - 1991,
+    'programmer',
+    ['Coco', 'Rocky']
+]
+
+// Object example
+const jaz = {
+    firstName: "Jaz",
+    lastName: "K.",
+    age: 2037 - 1991,
+    job: "Programmer",
+    friends: ["Coco", "Rocky","Michi"],
+};
+
+console.log(jaz);
+
+//DOT NOTATION
+
+console.log(jaz.lastName);
+//Bracket Notations
+console.log(jaz["job"]);
+
+const nameKey = 'Name';
+
+console.log(jaz['first' + nameKey]);
+console.log(jaz['last' + nameKey]);
+
+const interestedIn = prompt(`What do you want to know about Jaz? Choose between firstName, lastName, age, job and friends`)
+
+if (jaz[interestedIn]) {
+    console.log(jaz[interestedIn]);
+} else {
+    console.log(
+        "Wrong request! Choose between firstName, lastName, age, job and friends"
+    );
+}
+
+jaz.location = "Hamburg";
+jaz['favDrink'] = "Coffee";
+console.log(jaz); */
+
+
+//Challange
+//Jaz has 3 friends, and her beste friends is Coco
+
+const jaz = {
+    firstName: "Jaz",
+    lastName: "K.",
+    age: 2037 - 1991,
+    job: "Programmer",
+    friends: ["Coco", "Rocky", "Michi"],
+};
+
+console.log(
+    `${jaz.firstName} has ${jaz.friends.length} friends, and her beste friends is ${jaz.friends[0]}`
+);
