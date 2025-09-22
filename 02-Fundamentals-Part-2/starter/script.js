@@ -252,7 +252,7 @@ jaz['favDrink'] = "Coffee";
 console.log(jaz); */
 
 
-//Challange
+/* //Challange
 //Jaz has 3 friends, and her beste friends is Coco
 
 const jaz = {
@@ -265,4 +265,42 @@ const jaz = {
 
 console.log(
     `${jaz.firstName} has ${jaz.friends.length} friends, and her beste friends is ${jaz.friends[0]}`
-);
+); */
+
+// OBJECT METHODS
+
+const jaz = {
+    firstName: "Jaz",
+    lastName: "K.",
+    birthYear: 1985,
+    job: "Programmer",
+    friends: ["Coco", "Rocky", "Michi"],
+    hasDriversLicense: true,
+
+    // calcAge: function (birthYear) {
+    //     return 2025 - birthYear
+    // }
+
+    // calcAge: function () {
+    //     console.log(this); // contains the whole object
+    //     return 2025 - this.birthYear
+    // }
+
+    calcAge: function () {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    summary: function () {
+            return `${this.firstName} is a ${this.calcAge()} old ${this.job}, and she has ${this.hasDriversLicense ? 'a' : 'no'} Drivers License`;
+        }
+};
+console.log(jaz.calcAge());
+console.log(jaz.age)
+
+// Challenge
+//"Jaz is a 40 year old programmer, and she has a/no drivers license." 
+
+console.log(jaz.summary());
+
+
