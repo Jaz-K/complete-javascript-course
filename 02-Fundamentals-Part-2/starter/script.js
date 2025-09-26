@@ -364,7 +364,7 @@ for (let i = 0; i < jazArray.length; i++) {
 
 // LOOP BACKWARDS
 
-const jazArray = [
+/* const jazArray = [
     "Jaz",
     "K.",
     2037 - 1991,
@@ -385,4 +385,25 @@ for (let exersise = 1; exersise < 4; exersise++) {
     for (let rep = 1; rep < 6; rep++) {
         console.log(` Exersise ${exersise}:  Lifting weight repetition ${rep} 🏋️‍♀️`);
     }
-}
+} */
+
+// WHILE LOOP    
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`lifting weigts repetition ${rep} 🏋️‍♀️`);
+// }
+
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`lifting weigts repetition ${rep} 🏋️‍♀️`);
+//     rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolles a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) {console.log('Loop is about to end')}
+};
