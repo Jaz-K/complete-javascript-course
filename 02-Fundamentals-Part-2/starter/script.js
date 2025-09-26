@@ -269,7 +269,7 @@ console.log(
 
 // OBJECT METHODS
 
-const jaz = {
+/* const jaz = {
     firstName: "Jaz",
     lastName: "K.",
     birthYear: 1985,
@@ -302,5 +302,18 @@ console.log(jaz.age)
 //"Jaz is a 40 year old programmer, and she has a/no drivers license." 
 
 console.log(jaz.summary());
+ */
 
+// FOR LOOP
+
+// console.log('lifting weigts repetition 1 🏋️‍♀️');
+// console.log('lifting weigts repetition 2 🏋️‍♀️');
+// console.log('lifting weigts repetition 3 🏋️‍♀️');
+// console.log('lifting weigts repetition 4 🏋️‍♀️');
+// console.log('lifting weigts repetition 5 🏋️‍♀️'); BAD PRACTICE NOT DRY
+
+// For loop keeps running while condition is true
+/* for (let rep = 1; rep <= 10; rep++){
+    console.log(`lifting weigts repetition ${rep} 🏋️‍♀️`);
+}  */
 
