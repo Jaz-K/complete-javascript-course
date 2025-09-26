@@ -317,3 +317,72 @@ console.log(jaz.summary());
     console.log(`lifting weigts repetition ${rep} 🏋️‍♀️`);
 }  */
 
+// Looping Array
+
+/* const jazArray = ["Jaz", "K.", 2037 - 1991, "programmer",["Coco", "Rocky"], true];
+
+const types = [];
+
+for (let i = 0; i < jazArray.length; i++){
+    //reading from jazArray
+    console.log(jazArray[i], typeof jazArray[i])
+
+    //Filling types array
+    // types[i] = typeof jazArray[i];
+
+    //push to array cleaner version
+    types.push(typeof jazArray[i])
+}
+
+console.log(types);
+
+const years = [1999, 2003, 1985, 2020]
+
+const age = [];
+
+for (let i = 0; i < years.length; i++){
+    age.push(2025 - years[i] )
+}
+
+console.log(age);
+
+//continue and break
+console.log("---ONLY STRINGS");
+
+for (let i = 0; i < jazArray.length; i++) {
+    if (typeof jazArray[i] !== 'string') continue;
+    console.log(jazArray[i], typeof jazArray[i]);
+}
+
+console.log("---BREAK WITH NUMBER");
+
+for (let i = 0; i < jazArray.length; i++) {
+    if (typeof jazArray[i] === "number") break;
+    console.log(jazArray[i], typeof jazArray[i]);
+}
+ */
+
+// LOOP BACKWARDS
+
+const jazArray = [
+    "Jaz",
+    "K.",
+    2037 - 1991,
+    "programmer",
+    ["Coco", "Rocky"],
+    true,
+];
+
+for (let i = jazArray.length -1; i >= 0; i--){
+    console.log(i, jazArray[i]);
+}
+
+// LOOP inside of a LOOP
+
+for (let exersise = 1; exersise < 4; exersise++) {
+    console.log(`----SATRING EXERSISE  ${exersise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(` Exersise ${exersise}:  Lifting weight repetition ${rep} 🏋️‍♀️`);
+    }
+}
