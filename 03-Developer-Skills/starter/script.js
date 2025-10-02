@@ -133,7 +133,7 @@ TEST DATA 1: [17, 21, 23]
 TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
-const testTemp1 = [17, 21, 23];
+/* const testTemp1 = [17, 21, 23];
 const testTemp2 = [12, 5, -5, 0, 4];
 
 const printForecast = function (arr) {
@@ -145,9 +145,60 @@ const printForecast = function (arr) {
 };
 
 printForecast(testTemp1);
-printForecast(testTemp2);
+printForecast(testTemp2); */
 
 // transform array to string
 // loop over array every valua need °C
 // x day (index + 1)
 // log string in console
+
+// AI CODE
+
+function analyzingWorkWeek(weekHours) {
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  // Validation: must be exactly 7 entries
+  if (!Array.isArray(weekHours) || weekHours.length !== 7) {
+    throw new Error("Input must be an array with exactly 7 daily hour values.");
+  }
+
+  // 1. Total hours
+  const totalHours = weekHours.reduce((sum, h) => sum + h, 0);
+
+  // 2. Average hours (rounded to 1 decimal place)
+  const avgHours = Math.round((totalHours / weekHours.length) * 10) / 10;
+
+  // 3. Day with most hours
+  const maxHours = Math.max(...weekHours);
+  const maxDayIndex = weekHours.indexOf(maxHours);
+  const maxDay = days[maxDayIndex];
+
+  // 4. Number of days worked (>0)
+  const daysWorked = weekHours.filter(h => h > 0).length;
+
+  // 5. Full-time? (>= 35 hours)
+  const isFullTime = totalHours >= 35;
+
+  return {
+    totalHours,
+    avgHours,
+    maxDay,
+    daysWorked,
+    isFullTime,
+  };
+}
+
+// TEST DATA
+const test = [7.5, 8, 6.5, 0, 8.5, 4, 0];
+console.log(analyzingWorkWeek(test));
+
+const test2 = [7.5, 8, 6.5, 0, 8.5, 4];
+console.log(analyzingWorkWeek(test2));
