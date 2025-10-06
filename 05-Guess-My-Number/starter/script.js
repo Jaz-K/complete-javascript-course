@@ -23,19 +23,25 @@ let score = 20;
 shownScore.textContent = score;
 let highscore = 0;
 
+function addMessage(m) {
+  message.textContent = m;
+}
+
 button.addEventListener('click', sendNumber);
 
 function sendNumber() {
   const guess = Number(input.value);
 
-  //Whene there is no input
+  //When there is no input
   if (!guess) {
-    message.textContent = '🛑 No Number';
+    // message.textContent = '🛑 No Number';
+    addMessage('🛑 No Number');
 
     //When player wins
   } else if (guess === secretNumber) {
     number.textContent = secretNumber;
-    message.textContent = '🎉 Correct Number';
+    // message.textContent = '🎉 Correct Number';
+    addMessage('🎉 Correct Number');
     body.style.backgroundColor = '#60b347';
     number.style.width = '30rem';
     if (score > highscore) {
@@ -43,8 +49,20 @@ function sendNumber() {
     }
     highscoreShown.textContent = highscore;
 
-    //When guess is to high
-  } else if (guess > secretNumber) {
+    //When guess is wrong
+  } else if (guess !== secretNumber) {
+    if (score > 1) {
+      //   message.textContent = guess > secretNumber ? '📈 too high' : '📉 too low';
+      addMessage(guess > secretNumber ? '📈 too high' : '📉 too low');
+      score--;
+      shownScore.textContent = score;
+    } else {
+      //   message.textContent = '💥 You lost the game!';
+      addMessage('💥 You lost the game!');
+      shownScore.textContent = 0;
+    }
+  } /* // When guess is to high
+    else if (guess > secretNumber) {
     if (score > 1) {
       message.textContent = '📈 too high';
       score--;
@@ -63,7 +81,7 @@ function sendNumber() {
       message.textContent = '💥 You lost the game"';
       shownScore.textContent = 0;
     }
-  }
+  } */
 }
 
 resetButton.addEventListener('click', resetGame);
@@ -71,7 +89,8 @@ resetButton.addEventListener('click', resetGame);
 function resetGame() {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  message.textContent = 'Star guessing...';
+  //   message.textContent = 'Star guessing...';
+  addMessage('Star guessing...');
   shownScore.textContent = score;
   input.value = '';
   number.textContent = '?';
