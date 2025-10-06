@@ -16,12 +16,12 @@ const number = document.querySelector('.number');
 const shownScore = document.querySelector('.score');
 const resetButton = document.querySelector('.again');
 const body = document.querySelector('body');
-const highscore = document.querySelector('.highscore');
+const highscoreShown = document.querySelector('.highscore');
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 shownScore.textContent = score;
-console.log('score', score);
+let highscore = 0;
 
 button.addEventListener('click', sendNumber);
 
@@ -38,6 +38,10 @@ function sendNumber() {
     message.textContent = '🎉 Correct Number';
     body.style.backgroundColor = '#60b347';
     number.style.width = '30rem';
+    if (score > highscore) {
+      highscore = score;
+    }
+    highscoreShown.textContent = highscore;
 
     //When guess is to high
   } else if (guess > secretNumber) {
@@ -62,13 +66,6 @@ function sendNumber() {
   }
 }
 
-// Reset game by refreshing page
-/* resetButton.addEventListener('click', refreshPage);
-
-function refreshPage() {
-  window.location.reload();
-} */
-
 resetButton.addEventListener('click', resetGame);
 
 function resetGame() {
@@ -82,4 +79,9 @@ function resetGame() {
   body.style.backgroundColor = '#222';
 }
 
-console.log('secretNumber', secretNumber);
+// Reset game by refreshing page
+/* resetButton.addEventListener('click', refreshPage);
+
+function refreshPage() {
+  window.location.reload();
+} */
