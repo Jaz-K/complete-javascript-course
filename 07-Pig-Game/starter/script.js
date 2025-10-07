@@ -17,15 +17,16 @@ scoreP0.textContent = 0;
 scoreP1.textContent = 0;
 dice.classList.add('hidden');
 
+const scores = [0, 0];
 let currentScore = 0;
-
+let activePlayer = 0;
 //ROLL DICE
 
 btnRollDice.addEventListener('click', rollDice);
 
 function rollDice() {
   const roll = Math.trunc(Math.random() * 6) + 1;
-
+  console.log('roll', roll);
   dice.classList.remove('hidden');
   dice.src = `dice-${roll}.png`;
 
@@ -33,8 +34,15 @@ function rollDice() {
   if (roll !== 1) {
     //add to current score
     currentScore += roll;
-    currentScoreP0.textContent = currentScore; // CHANGE LATER
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   } else {
     //switch  to player 2
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    //toggles the active class from both players
+    player0.classList.toggle('player--active');
+    player1.classList.toggle('player--active');
   }
 }
