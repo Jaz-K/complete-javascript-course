@@ -87,7 +87,7 @@ console.log(z === window.z); */
 
 // console.log(this); // refers to window object
 
-const calcAge = function (birthYear) {
+/* const calcAge = function (birthYear) {
   console.log(2025 - birthYear);
   // console.log(this); // undefined
 };
@@ -119,4 +119,57 @@ coco.calcAge = jaz.calcAge; // method borrowing
 coco.calcAge();
 
 const f = jaz.calcAge; // stored the function to variable f
-f(); // this is undefined, just a regular function without owner
+f(); // this is undefined, just a regular function without owner */
+
+// THIS REGULAR AND ARROW FUNCTIONS
+
+// var firstName = 'Rocky'; // sets a global variable
+
+const jaz = {
+  firstName: 'Jaz',
+  year: 1985,
+  calcAge: function () {
+    console.log(this); //  refers to jaz object
+    // console.log(2025 - this);
+    // console.log(2025 - this.year);
+
+    // NOT WORKING because of regular function
+    /* const isMillenial = function () {
+      console.log(this); //undefined because regular function
+      console.log(this.year >= 1981 && this.year <= 1996);
+      // regular function call so this is undefined */
+
+    // SOLUTION 1
+    /*  const self = this; // self or that
+    const isMillenial = function () {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+     */
+    // SOLUTION 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+      // works because arrow function refers to parent scope
+    };
+    isMillenial();
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`), // undefined refers to window
+  // arrow functions does not get their own this keyword, they get it from the parent scope
+};
+jaz.greet(); // 'Hey undefined'
+jaz.calcAge();
+
+//ARGUMENTS KEYWORD
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 7, 12);
+
+var adArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+adArrow(2, 5, 8); // error arguments is not defined
