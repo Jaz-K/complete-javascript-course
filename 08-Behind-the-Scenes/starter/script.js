@@ -39,7 +39,7 @@ calcAge(1985);
  */
 
 // HOISTING
-//Variables
+/* //Variables
 console.log('me', me);
 // console.log('job', job);
 // console.log('year', year);
@@ -81,4 +81,42 @@ const z = 3;
 
 console.log(x === window.x);
 console.log(y === window.y);
-console.log(z === window.z);
+console.log(z === window.z); */
+
+// THIS
+
+// console.log(this); // refers to window object
+
+const calcAge = function (birthYear) {
+  console.log(2025 - birthYear);
+  // console.log(this); // undefined
+};
+
+calcAge(1985);
+
+const calcAgeArrow = birthYear => {
+  console.log(2025 - birthYear);
+  // console.log(this); // window arrow point to parent/global scope
+};
+
+calcAgeArrow(1985);
+
+const jaz = {
+  year: 1985,
+  calcAge: function () {
+    console.log(this); //  refers to jaz object
+    console.log(2025 - this.year);
+  },
+};
+
+jaz.calcAge();
+
+const coco = {
+  year: 2017,
+};
+
+coco.calcAge = jaz.calcAge; // method borrowing
+coco.calcAge();
+
+const f = jaz.calcAge; // stored the function to variable f
+f(); // this is undefined, just a regular function without owner
