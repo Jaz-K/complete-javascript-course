@@ -124,52 +124,104 @@ f(); // this is undefined, just a regular function without owner */
 // THIS REGULAR AND ARROW FUNCTIONS
 
 // var firstName = 'Rocky'; // sets a global variable
+// '
+// const jaz = {
+//   firstName: 'Jaz',
+//   year: 1985,
+//   calcAge: function () {
+//     console.log(this); //  refers to jaz object
+//     // console.log(2025 - this);
+//     // console.log(2025 - this.year);
 
-const jaz = {
-  firstName: 'Jaz',
-  year: 1985,
-  calcAge: function () {
-    console.log(this); //  refers to jaz object
-    // console.log(2025 - this);
-    // console.log(2025 - this.year);
+//     // NOT WORKING because of regular function
+//     /* const isMillenial = function () {
+//       console.log(this); //undefined because regular function
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//       // regular function call so this is undefined */
 
-    // NOT WORKING because of regular function
-    /* const isMillenial = function () {
-      console.log(this); //undefined because regular function
-      console.log(this.year >= 1981 && this.year <= 1996);
-      // regular function call so this is undefined */
+//     // SOLUTION 1
+//     /*  const self = this; // self or that
+//     const isMillenial = function () {
+//       console.log(self);
+//       console.log(self.year >= 1981 && self.year <= 1996);
+//      */
+//     // SOLUTION 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//       // works because arrow function refers to parent scope
+//     };
+//     isMillenial();
+//   },
 
-    // SOLUTION 1
-    /*  const self = this; // self or that
-    const isMillenial = function () {
-      console.log(self);
-      console.log(self.year >= 1981 && self.year <= 1996);
-     */
-    // SOLUTION 2
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-      // works because arrow function refers to parent scope
-    };
-    isMillenial();
-  },
+//   greet: () => console.log(`Hey ${this.firstName}`), // undefined refers to window
+//   // arrow functions does not get their own this keyword, they get it from the parent scope
+// };
+// jaz.greet(); // 'Hey undefined'
+// jaz.calcAge();
 
-  greet: () => console.log(`Hey ${this.firstName}`), // undefined refers to window
-  // arrow functions does not get their own this keyword, they get it from the parent scope
+// //ARGUMENTS KEYWORD
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 7, 12);
+
+// var adArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// adArrow(2, 5, 8); // error arguments is not defined'
+
+// OBJECT REFERENCE IN PRACTICE
+
+const coco1 = {
+  firstname: 'Coco',
+  lastName: 'Catty',
+  age: 10,
 };
-jaz.greet(); // 'Hey undefined'
-jaz.calcAge();
 
-//ARGUMENTS KEYWORD
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 5);
-addExpr(2, 5, 7, 12);
+function marryPerson(originalPerson, newLastName) {
+  originalPerson.lastName = newLastName;
+  return originalPerson;
+}
 
-var adArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
+const marriedCoco = marryPerson(coco1, 'Doggo');
+
+// const marriedCoco = coco;
+// marriedCoco.lastName = 'Doggo';
+
+console.log('Before:', coco1);
+console.log('After:', marriedCoco);
+// Both show {firstname: 'Cococ', lastName: 'Doggo', age: 10}
+// it changes the reference both point to the same object in the heap
+
+// COPY OBJECT
+
+const coco = {
+  firstname: 'Coco',
+  lastName: 'Catty',
+  age: 10,
+  family: ['Alice', 'Bob'],
 };
-adArrow(2, 5, 8); // error arguments is not defined
+
+// SHALLOW COPY (FIRST LEVEL)
+const cocoCopy = { ...coco };
+cocoCopy.lastName = 'Dogo';
+// created a real copy of the object and mutated the lastName
+
+// cocoCopy.family.push('mary');
+// cocoCopy.family.push('john');
+// both show ["Alice","Bob","mary", "john"]
+// the array is not a new object in the heap both reference to the same array
+// console.log('coco', coco);
+// console.log('cocoCopy', cocoCopy);
+
+// DEEP CLONE INCL ALL LEVEL OF OBJECTS
+const cocoClone = structuredClone(coco);
+cocoClone.family.push('mary');
+cocoClone.family.push('john');
+
+console.log('Original', coco);
+console.log('Clone', cocoClone);
