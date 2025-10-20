@@ -59,9 +59,14 @@ const restaurant = {
       `Order Received!! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered by ${time} at ${address}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your deliciouse pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
-// xxx
+/* // xxx
 restaurant.orderDelivery({
   time: '20:23',
   address: 'Streetname, 123',
@@ -141,4 +146,52 @@ console.log(d, e);
 const {
   fri: { open, close },
 } = openingHours;
-console.log(open, close);
+console.log(open, close); */
+
+// SPREAD OPERATOR
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocchi'];
+console.log(newMenu);
+
+// use cases
+//shallow copy
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// join arrays
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: array, string, mats, sets. NOT objects
+
+const str = 'Coco';
+const letters = [...str, ' ', 'K.'];
+console.log(letters);
+console.log(...str);
+
+/* const ingredients = [
+  prompt("Let's make Pasta! Ingredient 1?"),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3?'),
+];
+
+console.log(ingredients);
+restaurant.orderPasta(...ingredients); */
+
+// Objects
+const newRestaurant = { foundingIn: 1998, ...restaurant, founder: 'Guss' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
