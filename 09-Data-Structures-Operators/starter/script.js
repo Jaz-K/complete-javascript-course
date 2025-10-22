@@ -64,6 +64,10 @@ const restaurant = {
       `Here is your deliciouse pasta with ${ing1}, ${ing2} and ${ing3}`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
 /* // xxx
@@ -150,7 +154,7 @@ console.log(open, close); */
 
 // SPREAD OPERATOR
 
-const arr = [7, 8, 9];
+/* const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
 
@@ -176,7 +180,7 @@ console.log(menu);
 const str = 'Coco';
 const letters = [...str, ' ', 'K.'];
 console.log(letters);
-console.log(...str);
+console.log(...str); */
 
 /* const ingredients = [
   prompt("Let's make Pasta! Ingredient 1?"),
@@ -188,10 +192,58 @@ console.log(ingredients);
 restaurant.orderPasta(...ingredients); */
 
 // Objects
-const newRestaurant = { foundingIn: 1998, ...restaurant, founder: 'Guss' };
+/* const newRestaurant = { foundingIn: 1998, ...restaurant, founder: 'Guss' };
 console.log(newRestaurant);
 
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
-console.log(restaurant.name);
+console.log(restaurant.name); */
+
+// REST PATTERN & PARAMETERS
+
+// Destructuring
+// SPREAD because of the RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST because ob LEFT side =
+const [a, b, ...other] = [1, 2, 3, 4, 5];
+console.log(a, b, other);
+
+// Arrays
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// Functions
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(1, 2);
+add(3, 4, 5, 6);
+add(7, 8, 9, 10, 11, 12);
+
+const x = [22, 44];
+add(...x);
+
+restaurant.orderPizza(
+  'Cream Sauce',
+  'Mushrooms',
+  'Onions',
+  'Truffles',
+  'Parmigiano'
+);
+
+restaurant.orderPizza('Mushrooms');
