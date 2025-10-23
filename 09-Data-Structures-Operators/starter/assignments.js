@@ -300,7 +300,7 @@ function spellWord(word) {
   console.log(...word);
 }
 spellWord('JavaScript');
-*/
+
 
 // 4.1
 const [mainKeyword, ...rest] = books[0].keywords;
@@ -317,3 +317,4 @@ function printBookAuthorsCount(title, ...author) {
 }
 
 printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+*/

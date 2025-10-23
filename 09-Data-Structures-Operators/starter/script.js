@@ -198,7 +198,7 @@ console.log(newRestaurant);
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
-console.log(restaurant.name); */
+console.log(restaurant.name); 
 
 // REST PATTERN & PARAMETERS
 
@@ -247,3 +247,33 @@ restaurant.orderPizza(
 );
 
 restaurant.orderPizza('Mushrooms');
+*/
+
+// SHORT CIRCUITING
+// Use any data type, return ANY data type and short circuiting
+
+console.log(2 || 'Coco'); // 2 truthy
+console.log('' || 'Coco'); //'Coco'
+console.log(true || 0); // true
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---&&---');
+
+console.log(0 && 'Coco'); // 0
+console.log(2 && 'Coco'); // bothy truthy shows the last value
+console.log('Hi' && 23 && null && 'Coco');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
