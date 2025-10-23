@@ -247,7 +247,7 @@ restaurant.orderPizza(
 );
 
 restaurant.orderPizza('Mushrooms');
-*/
+
 
 // SHORT CIRCUITING
 // Use any data type, return ANY data type and short circuiting
@@ -277,3 +277,13 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+*/
+
+// THE NULLISH COALESCING OPERATOR ??
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//nullish: null undefend (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
