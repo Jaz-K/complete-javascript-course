@@ -288,7 +288,7 @@ printBookInfo({
 });
 
 printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' });
-*/
+
 
 // 3.1
 const bookAuthors = [...books[0].author, ...books[1].author];
@@ -300,3 +300,20 @@ function spellWord(word) {
   console.log(...word);
 }
 spellWord('JavaScript');
+*/
+
+// 4.1
+const [mainKeyword, ...rest] = books[0].keywords;
+console.log(mainKeyword);
+console.log(rest);
+
+// 4.2
+const { publisher: bookPublisher, ...restOfTheBook } = books[1];
+console.log(bookPublisher, restOfTheBook);
+
+// 4.3
+function printBookAuthorsCount(title, ...author) {
+  console.log(`The book "${title}" has ${author.length} authors`);
+}
+
+printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
