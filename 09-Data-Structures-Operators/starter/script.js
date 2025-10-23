@@ -70,6 +70,17 @@ const restaurant = {
   },
 };
 
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'Aldini',
+  owner: 'Aldini Brothers',
+};
+
 /* // xxx
 restaurant.orderDelivery({
   time: '20:23',
@@ -277,7 +288,7 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
-*/
+
 
 // THE NULLISH COALESCING OPERATOR ??
 restaurant.numGuests = 0;
@@ -287,3 +298,25 @@ console.log(guests);
 //nullish: null undefend (NOT 0 or '')
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
+*/
+
+// LOGICAL ASSIGNMENT OPERATOR
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// OR ASSIGNMENT OPERATOR
+// rest1.numGuests ||= 10
+// rest2.numGuests ||= 10
+
+// NULLISH ASSIGNMENT OPERATOR
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND ASSIGNMENT OPERATOR
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= 'anonymous';
+rest2.owner &&= 'anonymous';
+
+console.log(rest1);
+console.log(rest2);
