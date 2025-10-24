@@ -421,7 +421,7 @@ printGoals(...game.scored);
 // 7
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
-*/
+
 
 // ARRAY FOR OF LOOP
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -437,7 +437,7 @@ for (const [i, el] of menu.entries()) {
 // [0, 'Focaccia'] .entries() creates arrays with the index and the item
 
 console.log(...menu.entries());
-
+*/
 //OPTIONAL CHAINING
 // without
 // console.log(restaurant.openingHours.mon.open); //error message
@@ -467,3 +467,30 @@ console.log(users[1]?.name ?? 'User array empty'); // 'User array empty'
 
 // if (users.length > 0) console.log(users[0]?.name);
 // else console.log('User array empty');
+
+// LOOPING OBJECTS
+// property names (keys)
+const properties = Object.keys(openingHours);
+console.log('properties', properties);
+let openStr = `We are open at ${properties.length} days `;
+
+for (const day of properties) {
+  openStr += `${day} `;
+}
+console.log(openStr);
+
+// property values
+const values = Object.values(openingHours);
+for (const time of values) {
+  console.log(time);
+}
+console.log(values);
+
+// entire object (names + values)
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`on ${key} we open at ${open} and close ${close} `);
+}
