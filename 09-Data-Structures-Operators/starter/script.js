@@ -347,7 +347,7 @@ team is more likely to win, without using an if/else statement or the ternary
 operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
-*/
+
 
 const game = {
   team1: 'Bayern Munich',
@@ -420,3 +420,19 @@ printGoals(...game.scored);
 // 7
 team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
+*/
+
+// ARRAY FOR OF LOOP
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+// [0, 'Focaccia'] .entries() creates arrays with the index and the item
+
+console.log(...menu.entries());
