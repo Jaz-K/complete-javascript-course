@@ -374,7 +374,7 @@ for (const book of books) {
   }
 }
 console.log(allAuthors);
-*/
+
 // 9.1
 const bookData = [
   ['title', 'Computer Networking: A Top-Down Approach'],
@@ -389,7 +389,7 @@ const newBook = {
 };
 
 console.log(newBook);
-
+*/
 // 9.2
 const pages = 880;
 
@@ -400,3 +400,12 @@ const newBook2 = {
 };
 
 console.log(newBook2);
+
+// 10.1
+
+function getFirstKeyword(book) {
+  return book.keywords?.[0] ?? 'error';
+}
+
+console.log(getFirstKeyword(books[0]));
+console.log(getFirstKeyword(newBook2));
