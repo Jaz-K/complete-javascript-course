@@ -341,7 +341,7 @@ for (let i = 0; i < books.length; i++) {
       `"${books[i].title}" provides no data about its online content`
     );
 }
-*/
+
 
 // 7.1
 for (let i = 0; i < books.length; i++) {
@@ -352,3 +352,25 @@ for (let i = 0; i < books.length; i++) {
 for (let i = 0; i < books.length; i++) {
   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
 }
+*/
+
+// 8.1
+let pageSum = 0;
+for (const book of books) {
+  pageSum += book.pages;
+}
+console.log('pageSum', pageSum);
+
+// 8.2
+const allAuthors = [];
+
+for (const book of books) {
+  if (typeof book.author === 'string') {
+    allAuthors.push(book.author);
+  } else {
+    for (const author of book.author) {
+      allAuthors.push(author);
+    }
+  }
+}
+console.log(allAuthors);
