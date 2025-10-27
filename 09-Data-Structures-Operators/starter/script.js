@@ -82,6 +82,48 @@ const rest2 = {
   owner: 'Aldini Brothers',
 };
 
+// CHALLENGE CODE
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
 /* // xxx
 restaurant.orderDelivery({
   time: '20:23',
@@ -349,47 +391,6 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
 
-
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
 // 1
 const [players1, players2] = game.players;
 console.log(players1, players2);
@@ -437,7 +438,7 @@ for (const [i, el] of menu.entries()) {
 // [0, 'Focaccia'] .entries() creates arrays with the index and the item
 
 console.log(...menu.entries());
-*/
+
 //OPTIONAL CHAINING
 // without
 // console.log(restaurant.openingHours.mon.open); //error message
@@ -493,4 +494,52 @@ console.log(entries);
 
 for (const [key, { open, close }] of entries) {
   console.log(`on ${key} we open at ${open} and close ${close} `);
+}*/
+
+// Coding Challenge #2
+/*
+Let's continue with our football betting app! Keep using the 'game' variable from
+before.
+Your tasks:
+1. Loop over the game.scored array and print each player name to the console,
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them
+(except for "draw"). Hint: Note how the odds and the game objects have the
+same property names 😉
+4. Bonus: Create an object called 'scorers' which contains the names of the
+players who scored as properties, and the number of goals as the value. In this
+game, it will look like this:
+{
+Gnarby: 1,
+Hummels: 1,
+Lewandowski: 2
 }
+GOOD LUCK 😀 */
+
+// 2.1
+for (const player of game.scored.entries()) {
+  console.log(`Goal ${player[0] + 1}: ${player[1]}`);
+}
+
+// 2.2
+// team1 + team2 + draw / 3
+const oddsValues = Object.values(game.odds);
+let addOdds = 0;
+for (const odd of oddsValues) {
+  addOdds += odd;
+}
+let averageOdds = addOdds / oddsValues.length;
+console.log(averageOdds);
+
+//2.3
+const odds = Object.entries(game);
+for (const x of odds) {
+}
+//Odd of victory Bayern Munich: 1.33
+// console.log(`Odd of victory ${team}: ${odds.value}`);
