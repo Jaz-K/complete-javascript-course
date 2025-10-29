@@ -555,7 +555,7 @@ console.log(scorers);
  */
 
 // SETS
-const ordersSet = new Set([
+/* const ordersSet = new Set([
   'Pasta',
   'Pizza',
   'Pizza',
@@ -584,4 +584,31 @@ console.log(
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 );
 console.log(new Set('this is a test string').size);
-console.log('Hello World', new Set('Hello World').size);
+console.log('Hello World', new Set('Hello World').size); */
+
+// SETS NEW METHODS
+
+// find same in two sets
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection', commonFoods);
+console.log([...commonFoods]);
+
+// union of both sets
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union', italianMexicanFusion);
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+// unique in first set
+const uniqueItalian = italianFoods.difference(mexicanFoods);
+console.log('difference', uniqueItalian);
+
+const uniqueMexican = mexicanFoods.difference(italianFoods);
+console.log(uniqueMexican);
+
+// fusion of both without the intersection
+const uniqueItalianAndMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianAndMexicanFoods);
+
+// checks if two set are completely different
+console.log(italianFoods.isDisjointFrom(mexicanFoods));
