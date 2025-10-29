@@ -522,7 +522,7 @@ Lewandowski: 2
 }
 GOOD LUCK 😀 */
 
-// 2.1
+/* // 2.1
 for (const [i, player] of game.scored.entries()) {
   console.log(`Goal ${i + 1}: ${player}`);
 }
@@ -552,3 +552,36 @@ for (const player of game.scored) {
 }
 
 console.log(scorers);
+ */
+
+// SETS
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+
+console.log(ordersSet);
+
+//use case remove duplicates from array
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+console.log(new Set('this is a test string').size);
+console.log('Hello World', new Set('Hello World').size);
