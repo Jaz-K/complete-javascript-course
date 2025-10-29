@@ -588,7 +588,7 @@ console.log('Hello World', new Set('Hello World').size); */
 
 // SETS NEW METHODS
 
-// find same in two sets
+/* // find same in two sets
 const commonFoods = italianFoods.intersection(mexicanFoods);
 console.log('Intersection', commonFoods);
 console.log([...commonFoods]);
@@ -611,4 +611,36 @@ const uniqueItalianAndMexicanFoods =
 console.log(uniqueItalianAndMexicanFoods);
 
 // checks if two set are completely different
-console.log(italianFoods.isDisjointFrom(mexicanFoods));
+console.log(italianFoods.isDisjointFrom(mexicanFoods)); */
+
+// MAPS
+
+const rest = new Map();
+
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Rom, Italy');
+rest.set(2, 'Hamburg, Germany');
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 22)
+  .set(true, 'We are open')
+  .set(false, 'We are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
+console.log(rest);
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+const arr = [1, 2];
+rest.set(arr, 'test');
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+// rest.clear();
+console.log(rest.size);
+console.log(rest.get(arr));
