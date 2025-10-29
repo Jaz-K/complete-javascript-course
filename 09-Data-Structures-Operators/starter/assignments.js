@@ -389,7 +389,7 @@ const newBook = {
 };
 
 console.log(newBook);
-*/
+
 // 9.2
 const pages = 880;
 
@@ -409,3 +409,6 @@ function getFirstKeyword(book) {
 
 console.log(getFirstKeyword(books[0]));
 console.log(getFirstKeyword(newBook2));
+*/
+
+// 11.1

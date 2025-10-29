@@ -523,8 +523,8 @@ Lewandowski: 2
 GOOD LUCK 😀 */
 
 // 2.1
-for (const player of game.scored.entries()) {
-  console.log(`Goal ${player[0] + 1}: ${player[1]}`);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 
 // 2.2
@@ -538,8 +538,17 @@ let averageOdds = addOdds / oddsValues.length;
 console.log(averageOdds);
 
 //2.3
-const odds = Object.entries(game);
-for (const x of odds) {
+const odds = Object.entries(game.odds);
+for (const [team, odd] of odds) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
 }
-//Odd of victory Bayern Munich: 1.33
-// console.log(`Odd of victory ${team}: ${odds.value}`);
+// 2.4 Bonus
+
+const scorers = {};
+
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+
+console.log(scorers);
