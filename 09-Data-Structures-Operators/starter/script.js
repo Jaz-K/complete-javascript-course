@@ -775,52 +775,52 @@ const plane = 'A320';
 
 // UPPER AND LOWER CASE
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
-// fixed capitalization
+// // fixed capitalization
 
-const passenger = 'CoCo';
-const passengerLower = passenger.toLowerCase();
-const passengerCorrect =
-  passengerLower[0].toUpperCase() + passengerLower.slice(1);
-console.log(passengerCorrect);
+// const passenger = 'CoCo';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
 
-// comparing email
+// // comparing email
 
-const email = 'hello@coco.de';
-const loginMail = '   Hello@Coco.dE \n';
+// const email = 'hello@coco.de';
+// const loginMail = '   Hello@Coco.dE \n';
 
-const emailLower = loginMail.toLowerCase();
-const trimmedEmail = emailLower.trim(); // remove whit spaces incl \n
+// const emailLower = loginMail.toLowerCase();
+// const trimmedEmail = emailLower.trim(); // remove whit spaces incl \n
 
-const normalizedEmail = loginMail.toLowerCase().trim(); // concatenate multiple methods
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
+// const normalizedEmail = loginMail.toLowerCase().trim(); // concatenate multiple methods
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
 
-//replacing
+// //replacing
 
-const priceGB = '288,98£';
-const priceUS = priceGB.replace('£', '$').replace(',', '.');
-console.log(priceUS);
+// const priceGB = '288,98£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
 
-const announcement = 'All passengers come to board door 23, Boarding door 23!';
-console.log(announcement.replaceAll('door', 'gate'));
+// const announcement = 'All passengers come to board door 23, Boarding door 23!';
+// console.log(announcement.replaceAll('door', 'gate'));
 
-//REGEX  regular expression
-console.log(announcement.replace(/door/g, 'gate')); // g stabds for global
+// //REGEX  regular expression
+// console.log(announcement.replace(/door/g, 'gate')); // g stabds for global
 
-// booleans
+// // booleans
 
-const plane2 = 'Airbus A320neo';
-console.log(plane2.includes('A32'));
-console.log(plane2.includes('Boeing'));
-console.log(plane2.includes('Airbus'));
-console.log(plane2.startsWith('Air'));
+// const plane2 = 'Airbus A320neo';
+// console.log(plane2.includes('A32'));
+// console.log(plane2.includes('Boeing'));
+// console.log(plane2.includes('Airbus'));
+// console.log(plane2.startsWith('Air'));
 
-if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
-  console.log('Part of the new Airbus family');
-}
+// if (plane2.startsWith('Airbus') && plane2.endsWith('neo')) {
+//   console.log('Part of the new Airbus family');
+// }
 
 // practice exercise
 
@@ -836,3 +836,53 @@ const checkBaggage = function (items) {
 checkBaggage('I have a Laptop, Food and a pocket Knife');
 checkBaggage('Socks and Camera');
 checkBaggage('Got some snacks and a gun for Protection');
+
+// split()  and join()
+
+console.log('a+very+nice+string'.split('+'));
+const [firstName, lastName] = 'Coco Kittycat'.split(' ');
+
+const newName = ['Mrs', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+function capitalizeName(name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+}
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('coco kittycat');
+
+//padding string
+
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+'));
+
+//example usage
+const maskCreditCard = function (number) {
+  const str = number + ''; // same as String()
+  const last = str.slice(-4); //  last 4 digits
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(1234567));
+console.log(maskCreditCard('DE' + 1235499713645464));
+console.log(maskCreditCard('15643987416464'));
+
+// repeat
+const message2 = 'Bad weather all departures delayed... ';
+
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`Thera are ${n} planes in line ${'🛬'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
